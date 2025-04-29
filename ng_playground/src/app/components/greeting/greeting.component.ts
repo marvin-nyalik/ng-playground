@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-greeting',
@@ -7,5 +7,10 @@ import { Component, Input } from '@angular/core';
   styleUrl: './greeting.component.css'
 })
 export class GreetingComponent {
-  @Input() message = "Hello, hello!"
+  @Input() message: string = "";
+  @Output() response = new EventEmitter<string>();
+
+  responseValue = () => {
+    this.response.emit('I have been clicked')
+  }
 }
