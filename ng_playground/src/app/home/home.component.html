@@ -1,2 +1,8 @@
 <p>home works!</p>
-<app-greeting [message]="homeMessage()"/>
+<app-greeting [message]="'Welcome'" (response)="receiveMessage($event)"/>
+<p>{{ homeMessage() }}</p>
+
+<app-io [inp]="inputForIO" (out)="handleDataFromIO($event)"/>
+<hr>
+<h2>DATA FROM IO</h2>
+<p [ngClass]="{'strikethrough':dataFromIO().read }">Comment: {{ dataFromIO().comment }}</p>
