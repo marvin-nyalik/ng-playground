@@ -1,12 +1,28 @@
 import { Component, signal } from '@angular/core';
 import { GreetingComponent } from "../components/greeting/greeting.component";
+import { IoComponent } from "../components/io/io.component";
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [GreetingComponent],
+  imports: [GreetingComponent, IoComponent, NgClass],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  homeMessage = signal('Hellow from home')
+  homeMessage = signal('');
+  dataFromIO = signal<{ comment: string, read: boolean }>({ comment: '', read: false })
+
+  handleDataFromIO = (data: { comment: string, read: boolean }) => {
+    this.dataFromIO.set(data);
+  }
+
+  inputForIO = {
+    title: 'Black Widow',
+    rating: 8.9
+  }
+
+  receiveMessage(msg: string) {
+    this.homeMessage.set(`From Child: ${msg}`)
+  }
 }
