@@ -2,10 +2,11 @@ import { Component, signal } from '@angular/core';
 import { GreetingComponent } from "../components/greeting/greeting.component";
 import { IoComponent } from "../components/io/io.component";
 import { NgClass } from '@angular/common';
+import { ParentCounterComponent } from '../components/parent-counter/parent-counter.component';
 
 @Component({
   selector: 'app-home',
-  imports: [GreetingComponent, IoComponent, NgClass],
+  imports: [GreetingComponent, IoComponent, NgClass, ParentCounterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
