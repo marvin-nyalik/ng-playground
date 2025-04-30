@@ -1,0 +1,21 @@
+Angular component lifecycle hooks are special methods
+ in a component or directive that allow you to tap into
+ key moments during its creation, update, and destruction. 
+
+constructor() - Called first when the component is instantiated.
+
+ngOnChanges() - Called when an @Input() property changes.
+
+ngOnInit() - Called once after the first ngOnChanges(). INITIALIZATION LOGIC
+
+ngDoCheck() - Called during every change detection run. CUSTOM CHANGE DETECTION
+
+ngAfterContentInit() - Called once after projecting external content into the component.
+
+ngAfterContentChecked() - After every check of projected content
+
+ngAfterViewInit() - Once after a component and its children views have been initialized
+
+ngAfterViewChecked() - After every check of component and child views
+
+ngOnDestroy() - Just before the component is destroyed
