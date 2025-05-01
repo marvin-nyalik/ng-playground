@@ -1,0 +1,15 @@
+<button (click)="changePerson()">Make Changes</button>
+<h2>Changes Detected</h2>
+<hr>
+<p *ngFor="let change of allChanges">
+  <strong>{{ change.key }}</strong>
+  <span *ngIf="change.previousValue !== undefined && change.currentValue !== undefined">
+    changed from "{{ change.previousValue }}" to "{{ change.currentValue }}"
+  </span>
+  <span *ngIf="change.previousValue === undefined">
+    added with value "{{ change.currentValue }}"
+  </span>
+  <span *ngIf="change.currentValue === undefined">
+    removed was "{{ change.previousValue }}"
+  </span>
+</p>
