@@ -1,4 +1,7 @@
 <p>This is a parent Counter that holds the child counter</p>
 <button (click)="increment()">Increment</button>
 <button (click)="decrement()">Decrement</button>
+<button (click)="updateUser()">Change User</button>
 <app-child-counter [counter]="count"/>
+<app-user [user]="user"/>
+<app-checker/>
